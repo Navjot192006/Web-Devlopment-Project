@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}?v={{ time }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 </head>
+
 <body>
     <header>
         <div class="container">
-            <img src="{{ url_for('static', filename='images/RedCrossLogo.png') }}?v={{ time }}" alt="Logo" style="height: 50;">
+            <img src="{{ url_for('static', filename='images/RedCrossLogo.png') }}" alt="Logo" style="height: 50;">
             <nav>
                 <ul>
                     <li><a href="{{ url_for('home') }}">Home</a></li>
+                    {% if session['logged_in'] %}
                     <li class="dropdown">
                         <a href="#">Donate Blood</a>
                         <div class="dropdown-content">
@@ -27,18 +30,21 @@
                                     <li><a href="#">Schedule an Appointment</a></li>
                                     <li><a href="#">Manage Existing Appointment</a></li>
                                 </ul>
-    
+
                                 <ul>
                                     <li class="col"><a href="#">Manage My Donations</a></li>
                                     <li><a href="#">Schedule an Appointment</a></li>
                                     <li><a href="#">Manage Existing Appointment</a></li>
                                 </ul>
-    
+
                             </div>
-                        </div>    
+                        </div>
                     <li><a href="{{ url_for('about') }}">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    {% else %}
                     <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
@@ -60,4 +66,5 @@
         </div>
     </footer>
 </body>
+
 </html>
