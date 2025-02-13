@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}?v={{ time }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/RedCrossLogo.png') }}?v={{ time }}" alt="Logo" style="height: 50;">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Donate Blood</a>
+                        <div class="dropdown-content">
+                            <div id="block">
+                                <ul>
+                                    <li class="col"><a href="#">Manage My Donations</a></li>
+                                    <li><a href="#">Schedule an Appointment</a></li>
+                                    <li><a href="#">Manage Existing Appointment</a></li>
+                                </ul>
+                                <ul>
+                                    <li class="col"><a href="#">Manage My Donations</a></li>
+                                    <li><a href="#">Schedule an Appointment</a></li>
+                                    <li><a href="#">Manage Existing Appointment</a></li>
+                                </ul>
+    
+                                <ul>
+                                    <li class="col"><a href="#">Manage My Donations</a></li>
+                                    <li><a href="#">Schedule an Appointment</a></li>
+                                    <li><a href="#">Manage Existing Appointment</a></li>
+                                </ul>
+    
+                            </div>
+                        </div>    
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 The Indian National Red Cross.</p>
+            <ul class="social-links">
+                <li><a href="#">RedCross.org</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

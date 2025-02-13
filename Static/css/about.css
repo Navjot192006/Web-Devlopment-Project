@@ -1,0 +1,73 @@
+/* About Page */
+.about-hero {
+    background: url('../static/images/about-image.jpg') center/cover no-repeat;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+}
+
+.about-hero .container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.about-hero h1 {
+    font-size: 40px;
+}
+
+.about-hero p {
+    font-size: 18px;
+}
+
+.about-content {
+    padding: 50px 20px;
+    background: white;
+}
+
+.about-content .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.our-mission {
+    background: #f9f9f9;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.our-mission h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.our-mission p {
+    font-size: 18px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+</head>
+<body>
+    {% extends 'base.html' %}
+
+{% block title %}Sign Up {% endblock %}
+
+{% block content %}
+<div class="signup-container">
+    <h2>Blood Donation Sign Up</h2>
+    <form action="/signup" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="blood_group">Blood Group:</label>
+        <select id="blood_group" name="blood_group" required>
+            <option value="" disabled selected>Select Blood Group</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+        </select>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+{% endblock %}
+
+</body>
+</html>

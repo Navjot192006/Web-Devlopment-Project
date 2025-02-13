@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}?v={{ time }}">
+</head>
+<body>
+
+    {% extends 'base.html' %}  <!-- Include the header file -->
+
+    {% block title %} HOME PAGE {% endblock %}
+
+    {% block content %}
+
+    <section class="hero">
+        <h1>Donate Blood, Save Lives</h1>
+        <p>Your blood donation can make a difference in someone's life.</p>
+        <a href="#donate" class="btn">Donate Now</a>
+    </section>
+    <section class="info">
+        <h2>Why Donate Blood?</h2>
+        <p>Blood donation is a vital act that saves millions of lives every year.</p>
+    </section>
+    {% endblock %}
+</body>
+</html>

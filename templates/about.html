@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block title %} ABOUT PAGE {% endblock %}
+
+{% block content %}
+<section class="about-hero">
+    <div class="container">
+        <h1>About Us</h1>
+        <p>We are committed to saving lives through blood donation.</p>
+    </div>
+</section>
+
+<section class="about-content">
+    <div class="container">
+        <div class="about-text">
+            <h2>Who We Are</h2>
+            <p>
+                The Indian National Red Cross is dedicated to helping those in need through voluntary blood donation drives, emergency medical aid, and community health programs. We work tirelessly to ensure that no patient suffers due to a lack of blood.
+            </p>
+            <p>
+                Our mission is to create awareness about the importance of blood donation and make the process easier and more accessible for everyone.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="{{ url_for('static', filename='images/about-image.jpg') }}" alt="About Us">
+        </div>
+    </div>
+</section>
+
+<section class="our-mission">
+    <div class="container">
+        <h2>Our Mission</h2>
+        <p>
+            Our goal is to connect blood donors with those in need, making sure that hospitals and patients always have access to a safe and sufficient blood supply.
+        </p>
+    </div>
+</section>
+
+{% endblock %}
+
+</body>
+</html>

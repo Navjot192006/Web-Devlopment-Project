@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Signup Container */
+.signup-container {
+    width: 40%;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: #d9534f;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d9534f;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c9302c;
+}
+
+/*  Mobile Screens (Max width: 600px) */
+@media screen and (max-width: 600px) {
+    .signup-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    input, select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+/*  Tablet Screens (Between 601px and 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .signup-container {
+        width: 60%;
+    }
+
+    input, select {
+        font-size: 16px;
+    }
+}
+
+/*  Large Screens (Above 1024px) */
+@media screen and (min-width: 1025px) {
+    .signup-container {
+        width: 40%;
+    }
+}

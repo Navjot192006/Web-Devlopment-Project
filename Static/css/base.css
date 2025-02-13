@@ -1,0 +1,287 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 5 10px;
+}
+
+.container img {
+    height: 60px;
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    width: 250px;
+    top: 40px;
+    left: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.dropdown-content ul li {
+    padding: 10px;
+}
+
+.dropdown-content ul li a {
+    color: black;
+    font-size: 16px;
+}
+
+.dropdown-content ul li a:hover {
+    background: red;
+    color: white;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Mobile Navigation Button */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: url('../static/images/blood-donation-bg.jpg') center/cover no-repeat;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
+    background: white;
+    color: red;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: red;
+    color: white;
+}
+
+/* Info Section */
+.info {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+.info h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.info p {
+    font-size: 18px;
+}
+
+/* Footer */
+footer {
+    background: red;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.footer-content p {
+    font-size: 16px;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: red;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        display: block;
+        background: red;
+        color: white;
+    }
+
+    .dropdown-content ul li a {
+        color: white;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+
+    .info h2 {
+        font-size: 24px;
+    }
+
+    .info p {
+        font-size: 16px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .btn {
+        font-size: 17px;
+    }
+}
