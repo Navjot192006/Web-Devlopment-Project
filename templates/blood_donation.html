@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blood_donation.css') }}">
+</head>
+<body>
+    {% extends 'base.html' %}
+
+{% block title %}Blood Donation{% endblock %}
+
+{% block content %}
+<div class="blood-donation-container">
+    <h2>Blood Donation Registration</h2>
+    <p>Register as a donor and help save lives.</p>
+
+    <form action="{{ url_for('blood_donation') }}" method="POST" class="blood-donation-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required min="18" max="65">
+
+        <label for="blood_group">Blood Group:</label>
+        <select id="blood_group" name="blood_group" required>
+            <option value="" disabled selected>Select your blood group</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+        </select>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter your city or hospital location" required>
+
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" placeholder="Enter your phone number" required>
+
+        <button type="submit" class="donate-btn">Register as a Donor</button>
+    </form>
+</div>
+{% endblock %}
+
+</body>
+</html>

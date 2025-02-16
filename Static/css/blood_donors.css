@@ -1,0 +1,63 @@
+/* General Styles */
+.dashboard-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Table Styling */
+.donor-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.donor-table th, .donor-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.donor-table th {
+    background: #d9534f;
+    color: white;
+    font-weight: bold;
+}
+
+.donor-table tbody tr:hover {
+    background: #f9f9f9;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        width: 95%;
+    }
+
+    .donor-table th, .donor-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+</head>
+
+<body>
+
+    {% extends "base.html" %} 
+
+    {% block title %} CONTACT US {% endblock %}
+
+    {% block content %}
+
+    <section class="contact-container">
+        <h1>Contact Us</h1>
+        <p>Have questions? Fill out the form below and we’ll get back to you as soon as possible.</p>
+
+        <div class="contact-form">
+            <form action="{{ url_for('contact') }}" method="POST">
+                <div class="input-group">
+                    <input type="text" name="name" required>
+                    <label>Name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
+
+                <div class="input-group">
+                    <textarea name="message" required></textarea>
+                    <label>Message</label>
+                </div>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Email: <a href="mailto:support@blooddonation.org">support@blooddonation.org</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+            <p>Address: 123 Blood Donation Street, City, Country</p>
+        </div>
+    </section>
+
+    {% endblock %}
+
+</body>
+
+</html>

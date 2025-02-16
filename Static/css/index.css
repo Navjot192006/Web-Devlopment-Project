@@ -1,133 +1,185 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f9f9f9;
+    background: #f8f8f8;
     color: #333;
     line-height: 1.6;
-    text-align: center;
+    padding-top: 80px; /* Space for fixed navbar */
 }
 
 /* Hero Section */
 .hero {
-    background: url('../static/images/blood-donation-bg.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: 120px 20px;
+    background-image: url("../images/blood donation.png");
     color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Dark Overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero h1,
+.hero p,
+.hero .btn {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-size: 48px;
-    font-weight: bold;
+    font-size: 40px;
     margin-bottom: 10px;
-    animation: fadeIn 2s ease-in-out;
+    animation: slideIn 1.5s ease-in-out;
 }
 
 .hero p {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 20px;
-    max-width: 600px;
-    animation: fadeIn 2s ease-in-out 0.5s;
+    animation: slideIn 2s ease-in-out;
 }
 
-/* Call-to-Action Button */
+/* CTA Button */
 .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
     background: red;
     color: white;
+    border-radius: 5px;
     text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 18px;
     font-weight: bold;
-    transition: 0.3s;
-    animation: fadeIn 2s ease-in-out 1s;
-    display: inline-block;
+    transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
-    background: darkred;
-    transform: scale(1.05);
+    background: white;
+    color: red;
+    transform: scale(1.1);
 }
 
 /* Info Section */
-.info {
+.info,
+.how-it-works,
+.facts,
+.testimonials,
+.contact {
+    text-align: center;
     padding: 60px 20px;
     background: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: -20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-    margin-top: 30px;
+    animation: fadeInUp 1.5s ease-in-out;
 }
 
-.info h2 {
-    font-size: 36px;
+.info h2,
+.how-it-works h2,
+.facts h2,
+.testimonials h2,
+.contact h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
     color: red;
+}
+
+.info p,
+.facts ul,
+.testimonials p {
+    font-size: 18px;
+}
+
+/* Steps Section */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.step {
+    width: 250px;
+    padding: 20px;
+    background: #ff4e50;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+.step h3 {
     margin-bottom: 10px;
 }
 
-.info p {
-    font-size: 18px;
-    max-width: 700px;
-    margin: auto;
-}
-
-/* Footer */
-footer {
-    margin-top: 40px;
-    background: red;
-    color: white;
+/* Testimonials */
+.testimonial {
+    background: #fc913a;
     padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1.5s ease-in-out;
 }
 
-.footer-content {
-    max-width: 1000px;
-    margin: auto;
-}
-
-.footer-content p {
+.testimonial h4 {
+    margin-top: 10px;
     font-size: 16px;
 }
 
-.social-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.social-links li {
-    margin: 0 10px;
-}
-
-.social-links a {
-    color: white;
+/* Contact Section */
+.contact p a {
+    color: red;
     text-decoration: none;
-    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.social-links a:hover {
+.contact p a:hover {
     text-decoration: underline;
 }
 
-/* Keyframe Animations */
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -136,63 +188,24 @@ footer {
 }
 
 /* Responsive Design */
-
-/* Mobile Devices */
 @media (max-width: 768px) {
+    body {
+        padding-top: 100px;
+    }
+
     .hero h1 {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .hero p {
         font-size: 16px;
-        max-width: 90%;
     }
 
     .btn {
         font-size: 16px;
-        padding: 10px 20px;
     }
 
-    .info h2 {
-        font-size: 28px;
+    .testimonial {
+        width: 90%;
     }
-
-    .info p {
-        font-size: 16px;
-    }
-
-    .social-links {
-        flex-direction: column;
-        gap: 5px;
-    }
-}
-
-/* Tablets */
-@media (max-width: 1024px) {
-    .hero {
-        padding: 30px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero p {
-        font-size: 18px;
-    }
-
-    .info {
-        width: 95%;
-    }
-}
-
-/* Large Screens */
-@media (min-width: 1200px) {
-    .hero h1 {
-        font-size: 50px;
-    }
-
-    .hero p {
-        font-size: 22px;
-    }
-}
+} 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blood_donors.css') }}">
+</head>
+<body>
+    {% extends 'base.html' %}
+
+{% block title %}Blood Donors{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h2>Registered Blood Donors</h2>
+
+    {% if donors %}
+        <table class="donor-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Blood Group</th>
+                    <th>Location</th>
+                    <th>Contact</th>
+                    <th>Registered On</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for donor in donors %}
+                <tr>
+                    <td>{{ donor.name }}</td>
+                    <td>{{ donor.age }}</td>
+                    <td>{{ donor.blood_group }}</td>
+                    <td>{{ donor.location }}</td>
+                    <td>{{ donor.contact }}</td>
+                    <td>{{ donor.date.strftime('%Y-%m-%d') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No donors registered yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f8f8;
+    color: #333;
+    padding-top: 80px; /* Space for fixed navbar */
+}
+
+/* Contact Container */
+.contact-container {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Heading */
+.contact-container h1 {
+    font-size: 32px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Form Styling */
+.contact-form {
+    margin-top: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group textarea {
+    height: 120px;
+    resize: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #777;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* Input Focus Effect */
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: red;
+}
+
+.input-group input:focus + label,
+.input-group textarea:focus + label,
+.input-group input:valid + label,
+.input-group textarea:valid + label {
+    top: 10px;
+    font-size: 12px;
+    color: red;
+}
+
+/* Submit Button */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
+    background: red;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: white;
+    color: red;
+    transform: scale(1.1);
+    border: 2px solid red;
+}
+
+/* Contact Info */
+.contact-info {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding-top: 100px;
+    }
+
+    .contact-container {
+        padding: 40px 20px;
+        max-width: 90%;
+    }
+
+    .contact-container h1 {
+        font-size: 28px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}

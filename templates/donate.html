@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/donate.css') }}">
+</head>
+<body>
+    {% extends 'base.html' %}
+
+{% block title %}Donate Now{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="donate-hero">
+    <div class="container">
+        <h1>Make a Difference</h1>
+        <br> <br>
+        <p>Your contribution can help save lives and provide medical aid.</p>
+        <a href="#donate-form" class="donate-btn">Donate Now</a>
+    </div>
+</section>
+
+<!-- Why Donate Section -->
+<section class="why-donate">
+    <div class="container">
+        <h2>Why Your Donation Matters?</h2>
+        <p>Every year, thousands of patients rely on blood donations and emergency medical aid. Your support helps:</p>
+        <ul>
+            <li>Provide essential blood supplies to hospitals.</li>
+            <li>Support emergency disaster relief operations.</li>
+            <li>Fund medical care for those in need.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Payment Methods Section -->
+<section class="donation-methods">
+    <div class="container">
+        <h2>Choose Your Payment Method</h2>
+        
+        <form id="donate-form" action="#" method="POST">
+            <label for="amount">Donation Amount:</label>
+            <input type="number" id="amount" name="amount" min="10" placeholder="Enter amount" required>
+            
+            <div class="payment-options">
+                
+                <!-- Credit/Debit Card -->
+                <label>
+                    <input type="radio" name="payment_method" value="card" checked>
+                    <img src="{{ url_for('static', filename='images/card.png') }}" alt="Card"> Credit/Debit Card
+                </label>
+                
+                <!-- PayPal -->
+                <label>
+                    <input type="radio" name="payment_method" value="paypal">
+                    <img src="{{ url_for('static', filename='images/paypal.png') }}" alt="PayPal"> PayPal
+                </label>
+                
+                <!-- UPI -->
+                <label>
+                    <input type="radio" name="payment_method" value="upi">
+                    <img src="{{ url_for('static', filename='images/upi.png') }}" alt="UPI"> UPI / QR Code
+                </label>
+            </div>
+
+            <button type="submit" class="donate-btn">Proceed to Payment</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
+
+</body>
+</html>

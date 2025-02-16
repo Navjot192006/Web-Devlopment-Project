@@ -15,35 +15,18 @@
             <nav>
                 <ul>
                     <li><a href="{{ url_for('home') }}">Home</a></li>
-                    {% if session['logged_in'] %}
-                    <li class="dropdown">
-                        <a href="#">Donate Blood</a>
-                        <div class="dropdown-content">
-                            <div id="block">
-                                <ul>
-                                    <li class="col"><a href="#">Manage My Donations</a></li>
-                                    <li><a href="#">Schedule an Appointment</a></li>
-                                    <li><a href="#">Manage Existing Appointment</a></li>
-                                </ul>
-                                <ul>
-                                    <li class="col"><a href="#">Manage My Donations</a></li>
-                                    <li><a href="#">Schedule an Appointment</a></li>
-                                    <li><a href="#">Manage Existing Appointment</a></li>
-                                </ul>
-
-                                <ul>
-                                    <li class="col"><a href="#">Manage My Donations</a></li>
-                                    <li><a href="#">Schedule an Appointment</a></li>
-                                    <li><a href="#">Manage Existing Appointment</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    <li><a href="{{ url_for('about') }}">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+            
+                    {% if current_user.is_authenticated %}
+                        <!-- Only show if the user is logged in -->
+                        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                        <li><a href="{{ url_for('blood_donation') }}" class="{% if request.path == '/blood_donation' %}active{% endif %}">Donate Blood</a></li>
+                        <li><a href="{{ url_for('donate') }}" class="{% if request.path == '/donate' %}active{% endif %}">Donate Funds</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                        <!-- Only show if the user is NOT logged in -->
+                        <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
                     {% endif %}
                 </ul>
             </nav>
@@ -51,14 +34,17 @@
     </header>
 
     <main>
+        {% block content %}
+        
 
+        {% endblock %}
     </main>
 
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 The Indian National Red Cross.</p>
             <ul class="social-links">
-                <li><a href="#">RedCross.org</a></li>
+                <li><a href="{{ url_for('login') }}">RedCross.org</a></li>
                 <li><a href="#">Accessibility</a></li>
                 <li><a href="#">Terms of Use</a></li>
                 <li><a href="#">Privacy Policy</a></li>

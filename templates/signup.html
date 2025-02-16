@@ -14,25 +14,32 @@
     {% block content %}
     <div class="signup-container">
         <h2>Sign Up</h2>
-        <form action="{{ url_for('signup') }}" method="POST">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="text" name="phone" placeholder="Phone Number" required>
-            <select name="blood_group" required>
-                <option value="">Select Blood Group</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-            </select>
-            <input type="text" name="location" placeholder="Location" required>
-            <input type="password" name="password" placeholder="Password" required>
+        <form method="POST" action="{{ url_for('signup') }}">
+            <label for="name">Full Name:</label>
+            <input type="text" name="name" required>
+        
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+        
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" name="confirm_password" required>
+        
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" required>
+        
+            <label for="blood_group">Blood Group:</label>
+            <input type="text" name="blood_group" required>
+        
+            <label for="location">Location:</label>
+            <input type="text" name="location" required>
+        
+        
             <button type="submit">Sign Up</button>
         </form>
+        
         <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
     </div>
     {% endblock %}
@@ -41,3 +48,4 @@
 </body>
 
 </html>
+

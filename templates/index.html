@@ -1,29 +1,89 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blood Donation</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}?v={{ time }}">
 </head>
+
 <body>
 
-    {% extends 'base.html' %}  <!-- Include the header file -->
+    {% extends 'base.html' %} 
 
     {% block title %} HOME PAGE {% endblock %}
 
     {% block content %}
 
+    <!-- Hero Section -->
     <section class="hero">
         <h1>Donate Blood, Save Lives</h1>
         <p>Your blood donation can make a difference in someone's life.</p>
-        <a href="#donate" class="btn">Donate Now</a>
+        <a href="{{ url_for('signup') }}" class="btn">Become a Donor</a>
     </section>
+
+    <!-- Why Donate Section -->
     <section class="info">
         <h2>Why Donate Blood?</h2>
-        <p>Blood donation is a vital act that saves millions of lives every year.</p>
+        <p>Blood donation is a vital act that saves millions of lives every year. It helps patients suffering from
+            severe illnesses, accidents, and surgeries.</p>
+        <ul>
+            <li>One donation can save up to three lives.</li>
+            <li>Reduces the risk of heart disease.</li>
+            <li>Maintains a healthy blood flow.</li>
+        </ul>
     </section>
+
+    <!-- How it Works Section -->
+    <section class="how-it-works">
+        <h2>How Blood Donation Works</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>Step 1: Registration</h3>
+                <p>Sign up and fill in your details to check eligibility.</p>
+            </div>
+            <div class="step">
+                <h3>Step 2: Health Screening</h3>
+                <p>A quick health checkup ensures that you're fit to donate.</p>
+            </div>
+            <div class="step">
+                <h3>Step 3: Blood Donation</h3>
+                <p>The donation process takes only 10-15 minutes.</p>
+            </div>
+            <div class="step">
+                <h3>Step 4: Recovery</h3>
+                <p>Enjoy some snacks and rest for a few minutes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blood Donation Facts -->
+    <section class="facts">
+        <h2>Interesting Facts About Blood Donation</h2>
+        <ul>
+            <li>Blood cannot be manufactured; it can only be donated.</li>
+            <li>Every 2 seconds, someone in the world needs blood.</li>
+            <li>Donating blood burns about 650 calories per donation.</li>
+        </ul>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Donors Say</h2>
+        <div class="testimonial">
+            <p>"I never knew donating blood could be so rewarding! It feels great to help those in need."</p>
+            <h4>- Suresh Kumar Saini</h4>
+        </div>
+        <div class="testimonial">
+            <p>"A simple act that can save lives. I donate every 3 months!"</p>
+            <h4>- Ranjeet Rajput</h4>
+        </div>
+    </section>
+
+
     {% endblock %}
+
 </body>
+
 </html>

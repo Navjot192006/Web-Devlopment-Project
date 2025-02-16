@@ -1,0 +1,35 @@
+.dashboard {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.dashboard h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #d9534f;
+}
+
+.donation-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.donation-table th, .donation-table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.donation-table th {
+    background: #d9534f;
+    color: white;
+}
+
+.donation-table tr:hover {
+    background: #f5f5f5;
+}

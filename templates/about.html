@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 </head>
 <body>
     {% extends 'base.html' %}
 
-    {% block title %} ABOUT PAGE {% endblock %}
+    {% block title %} ABOUT PAGE {{ user }} {% endblock %}
 
 {% block content %}
 <section class="about-hero">
@@ -31,7 +31,7 @@
             </p>
         </div>
         <div class="about-image">
-            <img src="{{ url_for('static', filename='images/about-image.jpg') }}" alt="About Us">
+            <img src="{{ url_for('static', filename='images/about page.png') }}" alt="About Us" height="50px">
         </div>
     </div>
 </section>

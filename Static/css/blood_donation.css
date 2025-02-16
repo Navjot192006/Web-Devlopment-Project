@@ -1,0 +1,68 @@
+.blood-donation-container {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 50px 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blood-donation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.blood-donation-form label {
+    font-weight: bold;
+    text-align: left;
+}
+
+.blood-donation-form input,
+.blood-donation-form select {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.blood-donation-form select {
+    cursor: pointer;
+}
+
+.donate-btn {
+    padding: 12px 20px;
+    background: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.donate-btn:hover {
+    transform: scale(1.05);
+    background: #c9302c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .blood-donation-container {
+        width: 90%;
+    }
+}
